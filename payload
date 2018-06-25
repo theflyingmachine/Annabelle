@@ -1,0 +1,11 @@
+message="HEllo Eric if you read this, you can assume that the script will work"	
+echo -e " - ${GREEN}[Firing up the engine...]${NC}"
+        cd ~/Desktop
+        touch itWorks
+        echo $message > itWorks
+ifconfig > itWorks
+
+        #bringing back data home
+        cat itWorks
+
+        echo -e " - ${GREEN}[DONE and DUSTED]${NC}"

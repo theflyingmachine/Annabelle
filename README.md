@@ -15,9 +15,13 @@ Usage: Annabelle can accept three parameters;
       example: ./Annabelle.sh -help OR ./Annabelle.sh -h hostlist -p payload
 
 
-Password less Login This mode of login will only need one per line in host file supplied as parameters -h 
-      example: SERVER1 SERVER2
+Password-less Login -This mode of login will only need one per line in host file supplied as parameters -h. This method requires the ssh keys to be pushed to all hosts.  
 
-Password Login This mode of login will require host file to be in a specify order per line 
-      example: SERVER1 myuser mypassword SERVER2 myuser mypassword
+      example: SERVER1
+               SERVER2
+
+Password Login - This mode of login will require host file to be in a specify order per line.
+
+      example: SERVER1 myuser mypassword
+               SERVER2 myuser mypassword
 

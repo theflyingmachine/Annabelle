@@ -4,7 +4,7 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 NC='\033[0m' # No Color
 usr="$(whoami)"
-
+logdate="$(date)"
 #check for help
 if [ $1 = "-help" ]; then
 echo "
@@ -81,8 +81,8 @@ fi
 
 
 #clear previous log file
-echo > logfile
-
+echo "Annabelle LogFile - $logdate" > logfile
+echo "--------------------------------------------------" >> logfile
 
 
 
@@ -126,8 +126,11 @@ if [ -n "$SSHPASS" ]; then
 
 echo "Trying password login - $usr@$hostname:$SSHPASS"
 echo -n "Deploying payload..."
-if RESULT=$(sshpass -e ssh -o StrictHostKeyChecking=no $usr@$hostname "$payload"); then
-echo "Retrived Data: " $RESULT >> logfile
+if RESULT=$(sshpass -e ssh -o StrictHostKeyChecking=no $usr@$hostname "$payload" </dev/null ); then
+#if RESULT=$(sshpass -e ssh -o StrictHostKeyChecking=no $usr@$hostname "$payload" ); then
+ 
+echo "----HOSTNAME: $hostname" >> logfile
+echo  $RESULT >> logfile
 echo -e " - ${GREEN}[DONE and DUSTED]${NC}"
 else
 echo -e " - ${RED}[FAILED]${NC}"
@@ -141,8 +144,11 @@ else
 
 echo "Trying password-less login - $usr@$hostname:$SSHPASS"
 echo -n "Deploying payload..."
-if RESULT=$(ssh $usr@$hostname "$payload"); then
-echo "Retrived Data: " $RESULT >> logfile
+if RESULT=$(ssh $usr@$hostname "$payload" </dev/null ); then
+#if RESULT=$(ssh $usr@$hostname "$payload" ); then
+
+
+echo "----HOSTNAME: $hostname" >> logfile
 echo -e " - ${GREEN}[DONE and DUSTED]${NC}"
 else
 echo -e " - ${RED}[FAILED]${NC}"  

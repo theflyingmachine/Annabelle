@@ -11,7 +11,7 @@ Usage: Annabelle can accept three parameters;
 
  -p: Specifies input file used as payload
 
-      example: ./Annabelle.sh -help OR ./Annabelle.sh -h hostlist -p payload
+      example: ./Annabelle.sh -help OR ./Annabelle.sh -h <hostlist_filename> -p <payload_filename>
 
 
 Password-less Login -This mode of login will only need one per line in host file supplied as parameters -h. This method requires the ssh keys to be pushed to all hosts.  

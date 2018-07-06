@@ -1,11 +1,9 @@
-message="HEllo Eric if you read this, you can assume that the script will work"	
-echo -e " - ${GREEN}[Firing up the engine...]${NC}"
-        cd ~/Desktop
+message="Hello, if you read this back in your log file, you can be sure that the script is working"	
+        cd ~
         touch itWorks
         echo $message > itWorks
-ifconfig > itWorks
-
+echo "**File created**"
         #bringing back data home
         cat itWorks
 
-        echo -e " - ${GREEN}[DONE and DUSTED]${NC}"
+echo "**Done**"

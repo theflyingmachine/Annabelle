@@ -1,7 +1,6 @@
 ## 		Annabelle - By Eric Abraham Kalloor
 #####   https://github.com/theflyingmaching/Annabelle
 
-[========]
 
 #### Usage: 
 Annabelle can accept three parameters; 

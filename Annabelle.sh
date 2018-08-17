@@ -84,7 +84,8 @@ fi
 echo "Annabelle LogFile - $logdate" > logfile
 echo "--------------------------------------------------" >> logfile
 
-
+#clean up the hostfile for empty line
+sed -i '/^$/d' $input
 
 
 echo -e " - ${GREEN}[Firing up the Annabelle Engine...]${NC}"
@@ -93,9 +94,6 @@ echo "-------------------------------------------------------------------------"
 
 while IFS= read -r var
 do
-
-#check for blank lines
-if [ "$var" != "" ]; then 
 
 #read hostlist
 count=1
@@ -156,11 +154,7 @@ else
 echo -e " - ${RED}[FAILED]${NC}"  
 fi
 
-
 fi
-
-fi
-
 
 
 done < "$input"

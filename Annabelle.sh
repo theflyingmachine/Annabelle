@@ -93,7 +93,9 @@ echo "-------------------------------------------------------------------------"
 
 while IFS= read -r var
 do
- 
+
+#check for blank lines
+if [ "$var" != "" ]; then 
 
 #read hostlist
 count=1
@@ -157,7 +159,7 @@ fi
 
 fi
 
-
+fi
 
 
 
